@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩足球 · 实用笔记式介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      background: #f5f5f0;
+      color: #1f2a3a;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b2e45 100%);
+      padding: 4rem 2rem 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(46, 139, 87, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #eaeadc;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #b8c7c0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      padding-top: 0.8rem;
+      margin-top: 0.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 4rem 1.6rem;
+      background: #fafaf7;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .meta-line {
+      font-size: 0.9rem;
+      color: #7b8a7a;
+      border-left: 4px solid #2e8b57;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+      font-style: normal;
+      background: #f0f2eb;
+      padding: 0.7rem 1rem;
+      border-radius: 6px 4px 4px 6px;
+    }
+
+    .post-title {
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: #0d1b2a;
+      margin-bottom: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .post-intro {
+      font-size: 1.1rem;
+      color: #3a4a4e;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #dcdcd0;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+    }
+
+    .highlight {
+      background: #eaf0e3;
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      font-weight: 450;
+    }
+
+    .pull-quote {
+      background: #f5f3ea;
+      border-left: 5px solid #2e8b57;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 1.02rem;
+      color: #2a3b36;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .pull-quote::before {
+      content: '📌 ';
+      font-size: 1.1rem;
+    }
+
+    .faq-note {
+      background: #f8f8f2;
+      padding: 1.6rem 1.8rem;
+      border-radius: 14px;
+      margin: 2.4rem 0 1.8rem 0;
+      border: 1px solid #e2e4da;
+    }
+
+    .faq-note h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1f3b2e;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-note ul {
+      list-style: none;
+      padding-left: 0.3rem;
+    }
+
+    .faq-note li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .faq-note li::before {
+      content: '·';
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      color: #2e8b57;
+    }
+
+    .credit {
+      text-align: right;
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #d4d6c8;
+      font-size: 0.95rem;
+      color: #4f5e54;
+    }
+
+    .credit a {
+      color: #1b5e3a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 450;
+    }
+
+    .credit a:hover {
+      color: #0e4229;
+      background: #dfe6d8;
+      text-decoration: none;
+      padding: 0 2px;
+    }
+
+    .btn-soft {
+      display: inline-block;
+      background: #1b2e45;
+      color: #eaeadc;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 0.3rem;
+    }
+
+    .btn-soft:hover {
+      background: #2a4a3d;
+      transform: scale(1.01);
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .post-title {
+        font-size: 1.5rem;
+      }
+      .wrap {
+        padding: 1.8rem 1.2rem 3rem 1.2rem;
+      }
+      .pull-quote {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>竞彩足球 · 一份简单笔记</h1>
+    <div class="sub">快速识别 · 轻松理解 · 保持专注</div>
+  </header>
+
+  <div class="wrap">
+
+    <div class="meta-line">
+      📋 写在前面 · 这个网站到底是做什么的？
+    </div>
+
+    <h2 class="post-title">打开页面，一眼看懂的实用方向</h2>
+
+    <p class="post-intro">
+      如果你刚接触到「竞彩」这个词，或者想确认这个网站是否适合自己，那这篇笔记就是为你准备的。<br>
+      这里没有复杂的营销话术，只从常见的场景出发，帮你快速理解它的内容边界。
+    </p>
+
+    <p>
+      很多人第一次来到 <span class="highlight">zh‑jcjq.com</span> 时，都会带着一个很实际的问题：<em>「这地方能帮我做什么？」</em> 答案其实很直接——它围绕 <strong>竞彩足球</strong> 这一主题，提供日常可读的资讯、基础规则梳理、赛事数据参考以及一些思路整理。不夸大，不兜售，更像一位安静的资料员。
+    </p>
+
+    <p>
+      比如说，你想了解一场比赛前的常见数据维度，或者想知道让球、胜平负这些概念在实际对局中如何体现。这时候，你不需要到处翻论坛或者看冗长的教学视频，只需要在这个网站找到对应的板块，就能读到经过筛选、去掉了噪音的笔记式内容。它不承诺帮你预测结果，而是帮你建立对 <a href="https://zh-jcjq.com" style="color:#1b5e3a; text-decoration:underline; text-underline-offset:3px; font-weight:450;">竞彩足球</a> 更清晰的认识框架。
+    </p>
+
+    <div class="pull-quote">
+      引用一段站内很常见的提示：<br>
+      「任何数据都只是参考，球场上的变数永远超出纸面。保持理性，享受比赛本身才是长久之道。」
+    </div>
+
+    <p>
+      从我个人使用的感受来说，这个网站最大的好处是克制。它不会把页面塞满闪烁的广告或者诱导点击的按钮，而是把内容以卡片、列表、短段落的形式呈现，读起来就像翻开一本简洁的笔记本。无论你是新手还是有一定经验的人，都能在几分钟内找到自己关心的那部分。
+    </p>
+
+    <p>
+      另外，它在移动端的体验也很舒服。字体大小、间距都特意做了适配，在地铁上或者午休时随手翻一翻，没有任何压力。整体风格偏向低对比度、柔和的绿灰色系，长时间阅读眼睛不容易累。这大概就是它和很多同类站点不一样的地方——<strong>安静、务实、不打扰</strong>。
+    </p>
+
+    <div class="faq-note">
+      <h3>❓ 一些常见的疑问摘要</h3>
+      <ul>
+        <li><strong>内容更新频率？</strong> 基本上跟着主要赛事节奏走，不会每天刷屏，但关键轮次前会有整理。</li>
+        <li><strong>适合完全零基础的人吗？</strong> 适合。大部分概念都用生活化的例子解释过，没有堆砌术语。</li>
+        <li><strong>有没有社区或评论区？</strong> 目前没有。网站更偏向单向阅读，避免无效争论。</li>
+        <li><strong>数据来源可靠吗？</strong> 站内会标注参考信息源，但最终数据以官方发布为准。</li>
+      </ul>
+    </div>
+
+    <p>
+      总而言之，如果你需要一个干净、有内容、不废话的关于 <a href="https://zh-jcjq.com" style="color:#1b5e3a; text-decoration:underline; text-underline-offset:3px; font-weight:450;">竞彩足球</a> 的信息站点，那么把它加入书签会很值得。它不包办一切，但能帮你省下不少四处翻找的时间。
+    </p>
+
+    <p style="margin-top: 2rem; padding: 0.8rem 1rem; background: #edefe7; border-radius: 10px;">
+      💡 小贴士：访问的时候可以留意页面底部的「最近更新」区域，那里常会放一些临场思路或者冷门知识点。
+    </p>
+
+    <div class="credit">
+      <a href="https://zh-jcjq.com">竞彩足球</a> · 一份安静的参考笔记<br>
+      <span style="font-size:0.85rem; color:#6d7f72;">— 不喧哗，自有声。</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
